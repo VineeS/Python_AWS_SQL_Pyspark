@@ -1,0 +1,8 @@
+sample autp loan :
+
+Applicant information 
+
+Full Name :
+Email :
+Phone : 
+Sign : 

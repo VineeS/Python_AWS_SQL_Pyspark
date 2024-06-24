@@ -1,0 +1,38 @@
+ITEM LOCATION	ITEM CATEGORY	ITEM NAME	NECESSARY AS PART OF THE CURRENT MENU?	ITEM NUMBER	STOCK DATE	STOCK QUANTITY	MAX QUANTITY	REORDER	INVENTORY VALUE	UNIT PRICE	VENDOR	VENDOR POINT OF CONTACT	VENDOR CONTACT INFORMATION
+Stock room	Grains	Wheat bread	NO	123	MM/DD/YY	12	24	12	 $ 33.00 	 $ 2.75 	Bakery Alpha	Dana D.	Phone, email
+Pantry	Grains	Macaroni pasta	YES	234	MM/DD/YY	5	6	1	 $ 30.00 	 $ 6.00 	Pasta Inc.	Tony B.	Phone, email
+Pantry	Baking needs	Wheat flour	NO	345	MM/DD/YY	2	4	2	 $ 6.00 	 $ 3.00 	Bakery Alpha	Dana D.	Phone, email
+Pantry	Baking needs	All-purpose flour	YES	456	MM/DD/YY	1	1	0	 $ 3.50 	 $ 3.50 			
+Pantry	Baking needs	Bread flour	YES		MM/DD/YY	2	3	1	 $ 7.00 	 $ 3.50 			
+Pantry	Baking needs	Rice flour	YES		MM/DD/YY	1	1	0	 $ -   	 $ -   			
+Fridge	Dairy	Rice milk	NO		MM/DD/YY	2	2	0	 $ -   	 $ -   			
+Fridge	Dairy	2% milk	NO		MM/DD/YY	2	3	1	 $ -   	 $ -   			
+Freezer 1	Meat and poultry	Ground beef	NO		MM/DD/YY	1	1	0	 $ -   	 $ -   			
+Freezer 2			NO		MM/DD/YY			0	 $ -   	 $ -   			
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				
+			NO					0	 $ -   				

@@ -1,0 +1,83 @@
+Class methods, methods and static methods
+Regular methods --> example 
+class Employee:
+    def run_code(self):     
+        pass
+1. In Python, regular methods in a class automatically take the instance as the 
+first argument, conventionally named `self`. This is to enable methods to access and 
+operate on the attributes and other methods of the instance.
+
+However, if you want a method to take the class itself (the class object) as the first 
+argument instead of the instance, you can decorate the method with the `@classmethod` decorator. 
+This indicates to Python that the method is a class method.
+
+A class method takes the class itself as the first argument, conventionally named `cls`. 
+This allows the method to access class variables and other class-level functionality.
+
+Here's an example to illustrate:
+
+```python
+class MyClass:
+    class_variable = 0
+
+    def __init__(self, instance_variable):
+        self.instance_variable = instance_variable
+
+    @classmethod
+    def class_method(cls):
+        print("Class method called")
+        print("Class variable:", cls.class_variable)
+
+# Calling the class method
+MyClass.class_method()
+```
+
+In this example:
+
+- `class_method` is defined with the `@classmethod` decorator.
+- Inside the `class_method`, `cls` refers to the class itself (`MyClass`).
+- This method can access class variables and perform class-level operations.
+- When calling `MyClass.class_method()`, it doesn't require an instance of `MyClass`, and `cls` refers to the class object.
+
+Using class methods can be helpful when you need to perform operations that involve the class itself, 
+such as initializing class variables or providing alternative constructors.
+
+In Python, you have three types of methods that can be defined within a class: regular methods, class methods, and static methods. Each type of method has its own use cases and characteristics:
+
+1. **Regular Methods**:
+   - Regular methods in Python take the instance (`self`) as the first parameter and operate on the instance attributes.
+   - These methods are the most common type of methods in Python classes.
+   - Regular methods can access and modify both instance variables and class variables.
+
+   **Use regular methods when**:
+   - You need to access or modify instance variables.
+   - The method depends on the state of the object (instance).
+
+2. **Class Methods**:
+   - Class methods in Python are decorated with `@classmethod`.
+   - Class methods take the class itself (`cls`) as the first parameter.
+   - These methods can access and modify class variables but not instance variables.
+
+   **Use class methods when**:
+   - The method needs to access or modify class variables.
+   - You need to perform operations that involve the class itself, such as alternative constructors or factory methods.
+   - You want to provide a common interface for subclasses to override.
+
+3. **Static Methods**:
+   - Static methods in Python are decorated with `@staticmethod`.
+   - Static methods don't take the instance (`self`) or the class (`cls`) as the first parameter. They are similar to regular functions but are defined inside a class for better organization.
+   - These methods cannot access or modify instance variables or class variables directly.
+
+   **Use static methods when**:
+   - The method does not depend on the state of the object (instance) or the class.
+   - The method does not need access to instance variables or class variables.
+   - The method performs a utility function related to the class but does not depend on the instance or class.
+
+Here's a summary of when to use each type of method:
+
+- **Regular Methods**: Use when the method needs access to instance variables or class variables and operates on the instance state.
+- **Class Methods**: Use when the method needs access to class variables or performs operations related to the class itself.
+- **Static Methods**: Use when the method does not depend on instance state or class state and performs a utility function
+ related to the class.
+
+Choosing the appropriate method type depends on the specific requirements and design of your class and its methods.

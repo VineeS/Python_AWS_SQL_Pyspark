@@ -1,0 +1,15 @@
+1. Hands on experience with AWS Services – S3, SNS, SQS, Glue, Step functions, Lambda, API Gateway, Cloudwatch alarms, Terraform.
+2. CFT 
+3. CI/CD 
+4. All videos from abhishek
+5. AWS Step function -> https://www.youtube.com/watch?v=s0XFX3WHg0w&list=PL9nWRykSBSFgQrO66TmO1vHFP6yuPF5G-&index=2&ab_channel=BeABetterDev
+6. AWS Lambda and Rest API -> https://www.youtube.com/watch?v=uFsaiEhr1zs
+7. AWS S3 File Upload + Lambda Trigger - https://www.youtube.com/watch?v=H_rRlnSw_5s&list=PL9nWRykSBSFhotGZHIrRyB4zKokDzTpcc&index=13
+RDS -> https://www.youtube.com/watch?v=ciRbXZqBl7M&list=PL9nWRykSBSFhpMWBY4UJ0FBwDEHd6E8tn
+
+SQS -> https://www.youtube.com/watch?v=tPYa1r_cZ2E&list=PL9nWRykSBSFgQrO66TmO1vHFP6yuPF5G-&index=3
+SNS -> 
+8. Automated and Scalable Video Processing using AWS ECS, Fargate, Lambda, and S3
+https://www.youtube.com/watch?v=FZzvCEbZtac&t=66s&ab_channel=BrunoBoivin
+9. How to Deploy a Docker App to AWS using Elastic Container Service (ECS)
+https://www.youtube.com/watch?v=zs3tyVgiBQQ&t=0s&ab_channel=BeABetterDev

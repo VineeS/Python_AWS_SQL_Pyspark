@@ -1,0 +1,149 @@
+Proven experience as a Python developer with a strong understanding of Python libraries and frameworks.
+Demonstrated experience in developing Tableau dashboards and visualisations.
+Hands-on experience with DocuSign API integration and e-signature solutions.
+Familiarity with Power Apps flows or similar workflow automation tools.
+
+https://developers.docusign.com/
+
+1. Data story
+2. Tableau catalog
+3. Role management 
+4. Certain roles will have access to certain part of tableau view
+5. Real time analysis through tableau
+6. How to use different data source 
+7. Data Blending and Joins
+8. Advanced Dashboard
+9. Data Governance and Security
+* 		Advanced Calculations: Understand how to use advanced calculations such as LOD (Level of Detail) expressions, table calculations, and advanced functions like WINDOW and LOOKUP functions.
+* 		Mapping Techniques: Know how to create custom maps, use background images, and integrate spatial data for advanced mapping visualizations.
+* 		Data Blending and Joins: Understand how to blend data from multiple sources and handle complex joins effectively to create cohesive visualizations.
+* 		Advanced Dashboarding: Be familiar with techniques for creating interactive and dynamic dashboards, including actions, parameters, and dynamic filters.
+* 		Performance Optimization: Know how to optimize workbook performance, including techniques for improving data source performance, reducing load times, and optimizing calculations.
+* 		Advanced Visualizations: Be proficient in creating advanced visualizations such as heatmaps, box plots, treemaps, and other complex chart types.
+* 		Integration with Other Tools: Understand how to integrate Tableau with other tools and platforms, such as R, Python, SQL databases, and web applications.
+* 		Advanced Analytics: Familiarize yourself with Tableau's built-in analytical capabilities, including forecasting, trend analysis, clustering, and predictive modeling.
+* 		Tableau Server Administration: If applicable, have knowledge of Tableau Server administration tasks such as user management, security settings, permissions, and performance monitoring.
+* 		Custom Extensions and APIs: Understand how to use Tableau's Extensions API to build custom visualizations and integrate external functionalities into Tableau.
+* 		Best Practices and Design Principles: Have a solid understanding of best practices for data visualization, including color theory, typography, layout, and accessibility considerations.
+* 		Data Preparation: Be proficient in data preparation techniques within Tableau, including data cleansing, reshaping, and data blending.
+* 		Advanced Chart Customization: Know how to customize visualizations extensively using formatting options, custom shapes, tooltips, and annotations.
+* 		Advanced Statistical Analysis: Understand how to perform advanced statistical analysis within Tableau using features like R integration, statistical functions, and data modeling techniques.
+* 		Real-time Data Analysis: Familiarize yourself with techniques for analyzing real-time data streams and integrating real-time data sources into Tableau visualizations.
+1. 
+
+https://developers.docusign.com/ 
+Read about : 
+￼
+
+Learn about different 
+
+Topics
+
+1. Data cleaning in tableau : https://www.youtube.com/watch?v=La-UdSJ7fD4&ab_channel=JellymanEducation
+    1. Use Data Prep tool 
+    2. You can do data cleaning using Pyspark , Python , SQL
+2. Tableau Accelerators --> https://www.youtube.com/watch?v=F554IoLyAag&ab_channel=TheInformationLab
+ Tableau Accelerators are ready-to-use dashboards that you can combine with your data and customize 
+ to fit your needs to help you get to data-driven insights faster. 
+
+    First steo to get the da
+
+    These are pre-build dashboard used to optimize the data :
+    Tableau Accelerators can be beneficial for restaurants in several ways, 
+    especially when it comes to analyzing large volumes of data generated 
+    from various sources within the restaurant business. 
+    Here are some potential use cases and benefits of Tableau Accelerators for restaurants:
+
+    1. **Sales and Revenue Analysis**: Restaurants can use Tableau Accelerators to quickly analyze sales data, 
+    revenue trends, and performance metrics across different locations, time periods, and menu items. 
+    Accelerated data extracts enable faster retrieval and processing of transactional data, 
+    allowing restaurant owners and managers to make data-driven decisions to optimize sales and profitability.
+
+    2. **Menu Optimization**: Tableau Accelerators can help restaurants analyze customer preferences, 
+    popular menu items, and sales trends to optimize their menu offerings. 
+    By quickly analyzing data on menu item sales, profitability, and customer feedback, restaurants can 
+    identify top-selling items, underperforming dishes, and opportunities for menu innovation or promotion.
+
+    3. **Inventory Management**: Tableau Accelerators enable restaurants to analyze inventory levels, 
+    usage patterns, and supply chain data to optimize inventory management processes. 
+    By quickly analyzing data on ingredient consumption, supplier performance, and inventory turnover rates,
+    restaurants can improve forecasting accuracy, reduce stockouts, and minimize wastage.
+
+    4. **Customer Analytics**: Tableau Accelerators allow restaurants to analyze customer demographics, behavior,
+    and preferences to enhance customer satisfaction and loyalty. By quickly analyzing data on customer 
+    interactions, feedback, and purchase history, restaurants can personalize marketing campaigns,
+    tailor menu offerings, and improve overall customer experience.
+
+    5. **Operational Efficiency**: Tableau Accelerators enable restaurants to analyze operational data such as 
+    labor costs, staffing levels, and operational performance metrics to improve efficiency and productivity. 
+    By quickly analyzing data on labor scheduling, employee performance, and operational workflows, 
+    restaurants can optimize staffing levels, reduce labor costs, and streamline operations.
+
+    6. **Marketing and Promotions**: Tableau Accelerators empower restaurants to analyze marketing campaigns,
+    promotional activities, and customer acquisition channels to optimize marketing ROI and 
+    drive revenue growth. By quickly analyzing data on campaign performance, customer acquisition costs, 
+    and conversion rates, restaurants can identify successful marketing strategies, target high-value customers,
+    and maximize marketing effectiveness.
+
+    Overall, Tableau Accelerators offer restaurants a powerful tool for analyzing and leveraging their data 
+    to drive business insights, improve operational efficiency, and enhance customer satisfaction. 
+    By accelerating data extraction and analysis processes, Tableau Accelerators enable 
+    restaurants to make faster, more informed decisions and stay competitive in the rapidly evolving restaurant 
+    industry.
+
+3. bins with streamed data in tableau : https://www.youtube.com/watch?v=IEFbDXvvT9I&ab_channel=DatawithBaraa
+    1. bins are created only for measure field
+    Tableau does not directly support creating bins with streamed data in Tableau Desktop or Tableau Server. However, you can achieve this indirectly by preprocessing the data before streaming it into Tableau. Here's a general approach:
+
+Preprocess the Data: Before streaming your data into Tableau, preprocess it to create bins using your preferred tool or programming language. For example, if you're using Python or R, you can use libraries such as pandas or dplyr to create bins.
+
+Stream the Preprocessed Data: Once the data is preprocessed and binned, stream it into Tableau using Tableau Data Streaming. This process allows you to work with the binned data in Tableau as you would with any other data source.
+
+Visualize the Binned Data: In Tableau, you can create visualizations using the streamed data with bins. For example, you can create histograms or bar charts to analyze the distribution of the binned data.
+
+Update the Streaming Process: If the underlying data changes or needs to be refreshed, you'll need to update the streaming process to include any changes to the binning logic. This ensures that the streamed data remains up-to-date and accurate for analysis in Tableau.
+
+While Tableau Data Streaming itself does not support binning, you can still incorporate bins into your analysis workflow by preprocessing the data before streaming it into Tableau. This approach allows you to take advantage of Tableau's powerful visualization capabilities while working with streamed data that has been preprocessed and binned according to your specific requirements.
+
+code to create bins:
+import pandas as pd
+
+# Sample streaming data (replace this with your actual streamed data)
+streamed_data = [
+    {'value': 10},
+    {'value': 20},
+    {'value': 30},
+    {'value': 40},
+    {'value': 50}
+]
+
+# Convert streamed data to a pandas DataFrame
+df = pd.DataFrame(streamed_data)
+
+# Create bins using pandas
+bins = [0, 25, 50, 75, 100]  # Define bin edges
+labels = ['Bin 1', 'Bin 2', 'Bin 3', 'Bin 4']  # Define bin labels
+df['bin'] = pd.cut(df['value'], bins=bins, labels=labels, right=False)
+
+# Display the binned data
+print(df)
+
+
+4. Extract vs live : https://www.youtube.com/watch?v=Yy1fh66Z6tg&ab_channel=CodeCowboyOrg
+5. Data catalog : https://www.youtube.com/watch?v=w39YUvUVQtc&ab_channel=AnalyticsBox
+Everyone benefits with Tableau Catalog. By providing a complete picture of the data and how it 
+is connected to the analytics in the Tableau environment, Tableau Catalog increases the trust 
+and discoverability for both IT and business users. Whether you're communicating changes being 
+made to the data, reviewing a dashboard or searching for the right data for analysis, 
+Tableau Catalog lets you feel confident your organization is always using the right data.
+
+Migrating databases, deprecating a field or adding a new column to a table all have potential 
+effects on the assets in your environment. With lineage and impact analysis,you can see not only what assets 
+will have up and downstream implications but also who will be affected, minimizing headaches for everyone.
+https://www.tableau.com/products/add-ons/catalog
+
+6. Data Stories : Tableau Data Stories automatically generates narrative insights within your dashboard, 
+saving time and surfacing relevant insights.
+https://www.youtube.com/watch?v=K7sGGWtZpZc&ab_channel=TableauTim
+
+7. 

@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: 'THIS IS MY 1ST CFT FOR EC2 INSTANCE'
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      SubnetId: subnet-052701387f8dbf9e6
+      ImageId: ami-003d3d03cfe1b0468
+      SecurityGroupIds:
+        - sg-0903997088cd32db3
+      KeyName: aws_login
+      InstanceType: t2.micro
+      Tags:
+        - Key: Name
+          Value: MyEC2InstanceUsingCFT

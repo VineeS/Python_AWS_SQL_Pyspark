@@ -1,0 +1,42 @@
+Employee:
+EMP_ID ENAME SAL   DEPT_ID
+1      X     1000   100
+2      Y     2000   100
+3      Z     3000   100
+2      D     1500   101
+1      X     2000      
+
+ 
+Department.csv:
+DEPT_ID, DEPT_NAME
+100      Home 
+101      Retail
+
+
+
+OUTPUT:
+EMP_ID ENAME SAL DEPT_ID, DEPT_NAME LOAD_TS LST_UPDT_TS 
+1       X    1000   100     Home    current NULL
+1       X    10000   100     Home    previsou_time current Current
+
+from pyspark.sql import SparkSession
+from pyspark.sql import functions as F
+import datetime
+
+spark = SparkSession.builder.appName('test').getOrCreate()
+
+
+df_emp = spark.read.format('csv').option('header' = True).load('Employee.csv')
+df_dept = spark.read.format('csv').option('header' = True).load('Department.csv')
+df_join = df_emp.join(df_dept, F.col('DEPT_ID'))
+
+
+df_join1 = df_join.withColumn('LOAD_TS', F.when(F.col('SAL') ))
+
+datetime.datetime.timestamp()
+
+
+q = 12 --10
+s = copy.copy(q)
+
+

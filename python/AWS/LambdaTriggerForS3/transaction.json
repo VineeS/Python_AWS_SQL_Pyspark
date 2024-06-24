@@ -1,0 +1,17 @@
+{
+    "transactions": [
+      {
+        "transtype": "purchase",
+        "amount": 150.75
+      },
+      {
+        "transtype": "refund",
+        "amount": -50.00
+      },
+      {
+        "transtype": "deposit",
+        "amount": 200.00
+      }
+    ]
+  }
+  

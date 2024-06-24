@@ -1,0 +1,530 @@
+Shell scripting is a powerful way to automate tasks and manage systems. Here are some of the most important commands and their usage:
+
+### 1. `echo`
+
+Used to display a line of text or a variable value.
+
+```sh
+echo "Hello, World!"
+```
+
+### 2. `ls`
+
+Lists directory contents.
+
+```sh
+ls
+ls -l  # Detailed listing
+ls -a  # Including hidden files
+```
+
+### 3. `cd`
+
+Changes the current directory.
+
+```sh
+cd /path/to/directory
+cd ~  # Home directory
+```
+
+### 4. `pwd`
+
+Prints the current working directory.
+
+```sh
+pwd
+```
+
+### 5. `cp`
+
+Copies files and directories.
+
+````sh
+cp source_file destination_file
+cp -r source_directory destination_directory  # Recursive copy
+
+The `cp` command in Unix-like operating systems is used to copy files and directories. The `-r` (or `-R`) option stands for "recursive" and is used when copying directories. It tells `cp` to copy the directory and all its contents, including subdirectories and their contents.
+
+### Usage of `cp -r`
+
+```sh
+cp -r source_directory destination_directory
+````
+
+### Example
+
+Let's say you have the following directory structure:
+
+```
+source_directory/
+├── file1.txt
+├── file2.txt
+└── subdirectory
+    └── file3.txt
+```
+
+Using the command:
+
+```sh
+cp -r source_directory destination_directory
+```
+
+This will create `destination_directory` (if it does not exist) and copy the entire contents of `source_directory` into it, resulting in the following structure:
+
+```
+destination_directory/
+├── file1.txt
+├── file2.txt
+└── subdirectory
+    └── file3.txt
+```
+
+### Key Points
+
+1. **Recursive Copy**: `cp -r` copies the entire directory structure, including all files and subdirectories within the specified source directory.
+2. **Preserves Directory Structure**: The command maintains the directory hierarchy, creating directories and subdirectories in the destination as needed.
+3. **Handles Hidden Files**: It also copies hidden files (those starting with a dot `.`) within the directory structure.
+
+### Common Options Used with `cp -r`
+
+- `-v` (verbose): Shows the files being copied.
+
+  ```sh
+  cp -rv source_directory destination_directory
+  ```
+
+- `-p` (preserve): Preserves the file attributes such as mode, ownership, and timestamps.
+
+  ```sh
+  cp -rp source_directory destination_directory
+  ```
+
+- `-i` (interactive): Prompts before overwriting existing files.
+
+  ```sh
+  cp -ri source_directory destination_directory
+  ```
+
+- `-u` (update): Copies only when the source file is newer than the destination file or when the destination file is missing.
+  ```sh
+  cp -ru source_directory destination_directory
+  ```
+
+Using these options with `cp -r` can help tailor the command to fit specific requirements for copying directories and their contents.
+
+````
+
+### 6. `mv`
+Moves (renames) files and directories.
+```sh
+mv old_name new_name
+mv file /path/to/destination/
+````
+
+### 7. `rm`
+
+Removes files and directories.
+
+```sh
+rm file
+rm -r directory  # Recursive removal
+rm -f file  # Force removal without prompt
+```
+
+### 8. `touch`
+
+Creates an empty file or updates the timestamp of an existing file.
+
+```sh
+touch newfile.txt
+```
+
+### 9. `mkdir`
+
+Creates directories.
+
+```sh
+mkdir new_directory
+mkdir -p /path/to/new_directory  # Create parent directories as needed
+```
+
+### 10. `rmdir`
+
+Removes empty directories.
+
+```sh
+rmdir directory
+```
+
+### 11. `cat`
+
+Concatenates and displays file content.
+
+```sh
+cat file.txt
+```
+
+### 12. `more` and `less`
+
+Paginates the file content.
+
+```sh
+more file.txt
+less file.txt
+```
+
+### 13. `head` and `tail`
+
+Displays the beginning or end of a file.
+
+```sh
+head file.txt
+tail file.txt
+tail -n 20 file.txt  # Last 20 lines
+
+Vinees-MacBook-Pro:Shell_Scripts vinee$ head -n 5 test
+#!/bin/bash
+echo "Hello World"
+Vinees-MacBook-Pro:Shell_Scripts vinee$ head -n 1 test
+#!/bin/bash
+Vinees-MacBook-Pro:Shell_Scripts vinee$ tail -n 1 test
+echo "Hello World"
+```
+
+### 14. `grep`
+
+Searches for patterns within files.
+
+```sh
+grep "pattern" file.txt
+
+Vinees-MacBook-Pro:Shell_Scripts vinee$ grep 'He' test
+echo "Hello World"
+
+grep -r "pattern" directory/  # Recursive search
+Vinees-MacBook-Pro:Shell_Scripts vinee$ grep -r He test
+test:echo "Hello World"
+
+
+```
+
+### 15. `find`
+
+Searches for files and directories in a directory hierarchy.
+
+```sh
+find /path/to/search -name "filename"
+Vinees-MacBook-Pro:PythonInterview vinee$ find /Users/vinee/Desktop/PythonInterview -name "Python.docx"
+/Users/vinee/Desktop/PythonInterview/Python.docx
+
+find /path/to/search -type d -name "dirname"  # Only directories
+
+Vinees-MacBook-Pro:PythonInterview vinee$ find /Users/vinee/Desktop/PythonInterview -type d -name "Tableau"
+/Users/vinee/Desktop/PythonInterview/Tableau
+```
+
+### 16. `chmod`
+
+Changes file permissions.
+
+```sh
+chmod 755 file  # rwxr-xr-x
+Vinees-MacBook-Pro:PythonInterview vinee$ chmod 755 Python.docx
+Vinees-MacBook-Pro:PythonInterview vinee$ ls -l Python.docx
+-rwxr-xr-x@ 1 vinee  staff  20939 Jul 30  2021 Python.docx
+Vinees-MacBook-Pro:PythonInterview vinee$ chmod 400 Python.docx
+Vinees-MacBook-Pro:PythonInterview vinee$ ls -l Python.docx
+-r--------@ 1 vinee  staff  20939 Jul 30  2021 Python.docx
+Vinees-MacBook-Pro:PythonInterview vinee$ chmod 755 Python.docx
+Vinees-MacBook-Pro:PythonInterview vinee$ ls -l Python.docx
+-rwxr-xr-x@ 1 vinee  staff  20939 Jul 30  2021 Python.docx
+
+chmod +x script.sh  # Add execute permission
+
+Vinees-MacBook-Pro:PythonInterview vinee$ cd PythonBasics/
+Vinees-MacBook-Pro:PythonBasics vinee$ ls
+2_python_introduction.py	Inheritance.txt			classes.txt			dictionary.txt			logging.py			methods.py
+Inheritance.py			classes.py			classes2.py			import boto3.py			logging.txt			methods.txt
+Vinees-MacBook-Pro:PythonBasics vinee$ ls -l 2_python_introduction.py
+-rw-r--r--  1 vinee  staff  2719 Apr  6 15:49 2_python_introduction.py
+Vinees-MacBook-Pro:PythonBasics vinee$ chmod +x 2_python_introduction.py
+Vinees-MacBook-Pro:PythonBasics vinee$ ls -l 2_python_introduction.py
+-rwxr-xr-x  1 vinee  staff  2719 Apr  6 15:49 2_python_introduction.py
+
+```
+
+### 17. `chown`
+
+Changes file owner and group.
+
+```sh
+chown user:group file
+```
+
+### Checking the permission
+
+Vinees-MacBook-Pro:PythonBasics vinee$ ls -l 2_python_introduction.py
+-rwxr-xr-x 1 vinee staff 2719 Apr 6 15:49 2_python_introduction.py
+
+### Now check what groups and users are available (In above example user:group -> vinee:staff)
+
+Vinees-MacBook-Pro:PythonBasics vinee$ dscl . list /Groups
+\_accessoryupdater
+\_amavisd
+\_analyticsd
+\_analyticsusers
+\_appinstalld
+\_appleevents etc
+
+Vinees-MacBook-Pro:PythonBasics vinee$ dscl . list /Users
+\_accessoryupdater
+\_amavisd
+\_analyticsd
+\_appinstalld
+\_appleevents
+\_applepay etc
+
+### Changed the user:group for the file root:group
+
+Vinees-MacBook-Pro:PythonBasics vinee$ sudo chown root:group 2_python_introduction.py
+Password:
+Vinees-MacBook-Pro:PythonBasics vinee$ ls -l 2_python_introduction.py
+-rwxr-xr-x 1 root group 2719 Apr 6 15:49 2_python_introduction.py
+
+#### Changed back
+
+Vinees-MacBook-Pro:PythonBasics vinee$ sudo chown vinee:staff 2_python_introduction.py
+Vinees-MacBook-Pro:PythonBasics vinee$ ls -l 2_python_introduction.py
+-rwxr-xr-x 1 vinee staff 2719 Apr 6 15:49 2_python_introduction.py
+
+### 18. `df`
+
+Displays disk space usage.
+
+```sh
+df -h  # Human-readable format
+
+Vinees-MacBook-Pro:PythonInterview vinee$ df -h
+Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk1s5s1   466Gi    13Gi   166Gi     8%    404k  1.7G    0%   /
+devfs            190Ki   190Ki     0Bi   100%     656     0  100%   /dev
+/dev/disk1s2     466Gi   3.7Gi   166Gi     3%    1.7k  1.7G    0%   /System/Volumes/Preboot
+/dev/disk1s4     466Gi   5.0Gi   166Gi     3%       5  1.7G    0%   /System/Volumes/VM
+/dev/disk1s6     466Gi    77Mi   166Gi     1%     850  1.7G    0%   /System/Volumes/Update
+/dev/disk1s1     466Gi   277Gi   166Gi    63%    3.1M  1.7G    0%   /System/Volumes/Data
+map auto_home      0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
+/dev/disk1s5     466Gi    13Gi   166Gi     8%    404k  1.7G    0%   /System/Volumes/Update/mnt1
+
+```
+
+### 19. `du`
+
+Estimates file space usage.
+
+```sh
+du -sh directory/  # Human-readable summary
+
+Vinees-MacBook-Pro:PythonInterview vinee$ du -sh PythonBasics/
+ 52K	PythonBasics/
+
+ Vinees-MacBook-Pro:Desktop vinee$ du -sh PythonInterview/
+119M	PythonInterview/
+```
+
+### 20. `ps`
+
+Displays current processes.
+
+```sh
+ps
+
+Vinees-MacBook-Pro:Desktop vinee$ ps
+  PID TTY           TIME CMD
+12077 ttys000    0:01.04 -bash
+13073 ttys000    0:00.01 less test
+41141 ttys002    0:00.03 /bin/zsh -i
+
+ps aux  # Detailed listing of all processes
+
+Vinees-MacBook-Pro:Desktop vinee$ ps aux
+USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
+vinee            13655  10.4  0.6 1221813664  47884   ??  S    12:01PM   0:00.11 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/125.0.6422.114/Helpers/Google
+_windowserver      170   4.5  0.6 37536540  52740   ??  Ss   31May24 509:48.97 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer -daemon
+vinee            27796   2.9  3.1 68668192 258260   ??  S     4Jun24 325:21.64 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+root               406   2.7  0.1 33900908  11500   ??  Ss   31May24  32:29.45 /usr/libexec/TouchBarServer
+vinee            12042   2.6  1.0 34856372  84276   ??  S    10:03AM   1:44.34 /System/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal
+vinee              554   0.9  0.1 33763336   4932   ??  S    31May24   4:29.29 /System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/Support/fontd
+
+```
+
+### 21. `kill`
+
+Terminates processes.
+
+```sh
+kill PID
+kill -9 PID  # Force termination
+
+
+Vinees-MacBook-Pro:Shell_Scripts vinee$ python3 sample_python_process_to_kill.py
+Starting sample process...
+Running...
+Running...
+Running...
+Running...
+Running...
+Running...
+Running...
+Running...
+Running...
+Running...
+ps aux | grep python
+Running...
+
+Running...
+Running...
+Running...
+^Z
+[2]+  Stopped                 python3 sample_python_process_to_kill.py
+Vinees-MacBook-Pro:Shell_Scripts vinee$ ps aux | grep python
+vinee            14336   0.4  0.0 33591656     92 s000  U+   12:48PM   0:00.00 grep python
+vinee            55936   0.0  1.2 1213512632 102716   ??  S    Sun02PM   1:11.27 /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Users/vinee/.vscode/extensions/ms-python.vscode-pylance-2024.5.1/dist/server.bundle.js --cancellationReceive=file:c6bf596d996c2b8f26d8eb162c8a5e0539907063e7 --node-ipc --clientProcessId=41113
+vinee            41221   0.0  3.9 37592376 324496   ??  S    Thu03PM  11:06.07 /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/jre/21.0.3-macosx-x86_64.tar/bin/java -jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/server/sonarlint-ls.jar -stdio -analyzers /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonargo.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarjava.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarjs.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarphp.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarpython.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarhtml.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarxml.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarcfamily.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonartext.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonariac.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarlintomnisharp.jar
+vinee            14333   0.0  0.1 34145596   7800 s000  T    12:48PM   0:00.07 /usr/local/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python sample_python_process_to_kill.py
+Vinees-MacBook-Pro:Shell_Scripts vinee$ ps
+  PID TTY           TIME CMD
+12077 ttys000    0:01.14 -bash
+13073 ttys000    0:00.01 less test
+14333 ttys000    0:00.07 /usr/local/Cellar/python@3.12/3.12.3/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python sample_python_process_to_kill.py
+41141 ttys002    0:00.03 /bin/zsh -i
+
+## killing the process
+Vinees-MacBook-Pro:Shell_Scripts vinee$ kill 14333
+[2]+  Terminated: 15          python3 sample_python_process_to_kill.py
+Vinees-MacBook-Pro:Shell_Scripts vinee$ ps
+  PID TTY           TIME CMD
+12077 ttys000    0:01.15 -bash
+13073 ttys000    0:00.01 less test
+41141 ttys002    0:00.03 /bin/zsh -i
+
+### check all the python process
+Vinees-MacBook-Pro:Shell_Scripts vinee$ ps aux | grep python
+vinee            55936   0.0  0.3 1213512632  24948   ??  S    Sun02PM   1:11.31 /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Users/vinee/.vscode/extensions/ms-python.vscode-pylance-2024.5.1/dist/server.bundle.js --cancellationReceive=file:c6bf596d996c2b8f26d8eb162c8a5e0539907063e7 --node-ipc --clientProcessId=41113
+vinee            41221   0.0  0.1 37592376  11892   ??  S    Thu03PM  11:06.24 /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/jre/21.0.3-macosx-x86_64.tar/bin/java -jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/server/sonarlint-ls.jar -stdio -analyzers /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonargo.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarjava.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarjs.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarphp.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarpython.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarhtml.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarxml.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarcfamily.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonartext.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonariac.jar /Users/vinee/.vscode/extensions/sonarsource.sonarlint-vscode-4.5.1-darwin-x64/analyzers/sonarlintomnisharp.jar
+vinee            14374   0.0  0.0 33591656    116 s000  R+   12:50PM   0:00.00 grep python
+Vinees-MacBook-Pro:Shell_Scripts vinee$
+
+```
+
+### 22. `tar`
+
+Archives files.
+
+```sh
+tar -cvf archive.tar file1 file2
+tar -xvf archive.tar  # Extract
+tar -czvf archive.tar.gz file1 file2  # Create compressed archive
+tar -xzvf archive.tar.gz  # Extract compressed archive
+```
+
+### 23. `wget` and `curl`
+
+Downloads files from the web.
+
+```sh
+wget http://example.com/file
+
+Saving the Downloaded File Under Different Name #
+Vinees-MacBook-Pro:Shell_Scripts vinee$ wget -O latest-hugo.zip https://github.com/gohugoio/hugo/archive/master.zip
+
+wget -P /mnt/iso http://mirrors.mit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso
+
+curl -O http://example.com/file
+```
+
+### 24. `awk`
+
+Pattern scanning and processing language.
+
+```sh
+awk '{print $1}' file.txt  # Prints first column
+```
+
+### 25. `sed`
+
+Stream editor for filtering and transforming text.
+
+```sh
+sed 's/old/new/g' file.txt  # Replace all occurrences of 'old' with 'new'
+```
+
+### 26. `sort`
+
+Sorts lines in text files.
+
+```sh
+sort file.txt
+sort -r file.txt  # Reverse order
+```
+
+### 27. `uniq`
+
+Removes duplicate lines from a sorted file.
+
+```sh
+sort file.txt | uniq
+uniq -c file.txt  # Count occurrences
+```
+
+### 28. `diff`
+
+Compares files line by line.
+
+```sh
+diff file1.txt file2.txt
+```
+
+### 29. `man`
+
+Displays the manual page for a command.
+
+```sh
+man ls
+```
+
+### 30. `cron`
+
+Schedules tasks to run at specified times.
+
+```sh
+crontab -e  # Edit cron jobs
+```
+
+### Example of a Shell Script
+
+Here's a simple example that uses some of these commands to perform a task:
+
+```sh
+#!/bin/bash
+
+# Script to backup a directory
+
+# Variables
+SOURCE_DIR="/path/to/source"
+BACKUP_DIR="/path/to/backup"
+LOG_FILE="/path/to/logfile.log"
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Copy files to backup directory
+cp -r "$SOURCE_DIR"/* "$BACKUP_DIR"
+
+# Log the backup
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Backup completed" >> "$LOG_FILE"
+
+# Notify user
+echo "Backup of $SOURCE_DIR completed successfully!"
+```
+
+This script backs up the contents of a source directory to a backup directory and logs the operation.

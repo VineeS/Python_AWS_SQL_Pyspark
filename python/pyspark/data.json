@@ -1,0 +1,58 @@
+{
+    "Employee": [
+        {    
+            "employee_id": 101,
+            "name": "John Doe",
+            "department": "Engineering",
+            "position": "Software Engineer",
+            "salary": 90000,
+            "manager": {
+                "manager_id": 201,
+                "name": "Jane Smith",
+                "department": "Engineering",
+                "position": "Engineering Manager",
+                "salary": 120000
+            },
+            "subordinates": [
+                {
+                    "employee_id": 102,
+                    "name": "Alice Johnson",
+                    "department": "Engineering",
+                    "position": "Junior Engineer",
+                    "salary": 60000
+                },
+                {
+                    "employee_id": 103,
+                    "name": "Bob Williams",
+                    "department": "Engineering",
+                    "position": "Senior Engineer",
+                    "salary": 110000
+                }
+            ]
+        },
+        {
+            "employee_id": 202,
+            "name": "Eva Brown",
+            "department": "Marketing",
+            "position": "Marketing Manager",
+            "salary": 100000,
+            "manager": null,
+            "subordinates": [
+                {
+                    "employee_id": 203,
+                    "name": "Charlie Davis",
+                    "department": "Marketing",
+                    "position": "Marketing Specialist",
+                    "salary": 80000
+                },
+                {
+                    "employee_id": 204,
+                    "name": "Diana Wilson",
+                    "department": "Marketing",
+                    "position": "Marketing Analyst",
+                    "salary": 70000
+                }
+            ]
+        }
+    ]
+}

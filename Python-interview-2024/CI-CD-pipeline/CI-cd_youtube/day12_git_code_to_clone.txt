@@ -1,0 +1,35 @@
+sudo pip install awscli
+sudo apt-get install git-remote-codecommit
+
+Configure Git to use the credential helper:
+git config --global credential.helper '!aws codecommit credential-helper $@'
+git config --global credential.UseHttpPath true
+
+
+Actual command  ---->
+
+Vinees-MacBook-Pro:AWS vinee$ git config --global credential.helper '!aws codecommit credential-helper $@'
+Vinees-MacBook-Pro:AWS vinee$ git config --global credential.UseHttpPath true
+Vinees-MacBook-Pro:AWS vinee$ aws codecommit credential-helper $@
+
+usage: aws [options] codecommit credential-helper <subcommand> [parameters]
+aws: error: too few arguments
+Vinees-MacBook-Pro:AWS vinee$ git clone codecommit::us-east-1://code-commit-repo-for-practice
+Cloning into 'code-commit-repo-for-practice'...
+git: 'remote-codecommit' is not a git command. See 'git --help'.
+Vinees-MacBook-Pro:AWS vinee$ git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/code-commit-repo-for-practice
+Cloning into 'code-commit-repo-for-practice'...
+remote: Counting objects: 3, done.
+Unpacking objects: 100% (3/3), 497 bytes | 165.00 KiB/s, done.
+Vinees-MacBook-Pro:AWS vinee$ cd code-commit-repo-for-practice
+Vinees-MacBook-Pro:code-commit-repo-for-practice vinee$ ls
+templateCFTforEc2.yaml
+Vinees-MacBook-Pro:code-commit-repo-for-practice vinee$ pwd
+/Users/vinee/InterviewPrep/AWS/code-commit-repo-for-practice
+
+After updating the code-commit-repo-for-practice in AWS -->
+
+I mean I added 2nd file in AWS codecommit 
+1. cd code-commit-repo-for-practice
+2. git pull 
+

@@ -1,0 +1,53 @@
+Class Variable
+1. class variable are static variable its just that we do not use the static keyword
+2. Class variable are defined inside the class but outside any method
+3. They are accessed using class itself 
+
+ex code :
+class MyClass:
+    class_variable = 0  # This is a class variable shared by all instances
+
+    def __init__(self, instance_variable):
+        self.instance_variable = instance_variable  # This is an instance variable
+
+# Accessing class variable using class name
+print(MyClass.class_variable)  # Output: 0
+
+# Creating instances of MyClass
+obj1 = MyClass(5)
+obj2 = MyClass(10)
+
+# Accessing class variable using instances
+print(obj1.class_variable)  # Output: 0
+print(obj2.class_variable)  # Output: 0
+
+# Modifying class variable
+MyClass.class_variable = 1
+
+# Accessing class variable after modification
+print(MyClass.class_variable)  # Output: 1
+print(obj1.class_variable)  # Output: 1
+print(obj2.class_variable)  # Output: 1
+
+Aspect	            Class Variable	                            Instance Variable
+Scope	        Shared among all instances	                    Unique to each instance
+Access	        Accessed via class or instance	                Accessed via instance only
+Initialization	Defined within class, outside methods	        Defined within __init__ or methods using self
+Modification	Modified via class name	Modified via instance
+Memory Allocation	Consumes memory only once	                Consumes memory for each instance
+
+class MynewClass:
+    raise_amount = 1.05
+    def __init__(self,salary):
+        self.salary = salary
+
+    def raise(self):
+        self.salary = int(self.salary * self.raise_amount)
+        return self.salary
+
+
+emp1 = MynewClass(500000)
+emp2 = MynewClass(600000)
+
+print(emp1.raise)
+

@@ -1,0 +1,150 @@
+Check the following settings in order to run code ::ssh -i /Users/vinee/Downloads/aws-login-2024.pem ec2-user@34.207.254.68
+
+If you're still encountering a timeout when trying to SSH into your EC2 instance, even after ensuring the necessary IAM role and permissions, the issue is likely with network settings or security configurations. Here's a more detailed checklist to troubleshoot and resolve the problem:
+
+### Step-by-Step Troubleshooting:
+
+1. **Security Group Rules**:
+   - Ensure your security group allows inbound SSH traffic (port 22).
+   - Go to the EC2 Dashboard.
+   - Click on **Security Groups** under **Network & Security**.
+   - Select the security group associated with your instance.
+   - Verify the **Inbound rules** include:
+     ```
+     Type: SSH
+     Protocol: TCP
+     Port Range: 22
+     Source: Your IP (or 0.0.0.0/0 for testing)
+     ```
+
+2. **Network ACLs**:
+   - Ensure Network ACLs (NACLs) associated with your subnet allow inbound and outbound traffic on port 22.
+   - Go to the VPC Dashboard.
+   - Click on **Network ACLs**.
+   - Select the ACL associated with your instance's subnet.
+   - Verify that the rules allow:
+     - Inbound: Allow SSH (port 22) from your IP (or all IPs for testing).
+     - Outbound: Allow all traffic (0.0.0.0/0).
+
+3. **Route Table**:
+   - Ensure the route table associated with your subnet has a route to an Internet Gateway (IGW).
+   - Go to the VPC Dashboard.
+   - Click on **Route Tables**.
+   - Select the route table associated with your subnet.
+   - Ensure there's a route with:
+     ```
+     Destination: 0.0.0.0/0
+     Target: igw-xxxxxxxx (your Internet Gateway ID)
+     ```
+
+4. **Instance State and IP Address**:
+   - Ensure your EC2 instance is in the "running" state.
+   - Double-check the public IP address (or public DNS) of your instance. The IP address may change if the instance is stopped and started.
+
+5. **Correct Username**:
+   - Ensure you are using the correct username for your AMI:
+     - **Amazon Linux 2 or Amazon Linux**: `ec2-user`
+     - **Ubuntu**: `ubuntu`
+     - **CentOS**: `centos`
+     - **RHEL**: `ec2-user` or `root`
+     - **Debian**: `admin` or `root`
+     - **SUSE**: `ec2-user` or `root`
+
+6. **Reboot Instance**:
+   - Sometimes a simple reboot can resolve networking issues. Reboot your instance and try again.
+
+7. **Test from Another Network**:
+   - Attempt to SSH from a different network to rule out local network issues.
+
+### Example SSH Commands:
+
+For Amazon Linux 2:
+```
+ssh -i /Users/vinee/Downloads/aws-login-2024.pem ec2-user@3.84.247.169
+```
+
+For Ubuntu:
+```
+ssh -i /Users/vinee/Downloads/aws-login-2024.pem ubuntu@3.84.247.169
+```
+
+### Final Steps:
+
+If you've followed all the steps above and still can't connect:
+
+- **Check Instance Logs**: Go to the EC2 console, select your instance, and review the instance logs for any errors.
+- **Contact AWS Support**: If the problem persists, contact AWS support for further assistance.
+
+By thoroughly checking each of these areas, you should be able to identify and resolve the issue preventing you from SSH-ing into your EC2 instance.
+
+
+Note : I faced issue while running code ssh -i /Users/vinee/Downloads/aws-login-2024.pem ec2-user@34.207.254.68
+it said timeout beacuse I missed IPV4 address in rout table 
+
+If your route table has a route with the destination ::/0, 
+it means that all IPv6 traffic is routed through this route. 
+In AWS, ::/0 is the IPv6 equivalent of 0.0.0.0/0 for IPv4, representing all IPv6 addresses.
+
+also follow https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero
+refer youtube : https://www.youtube.com/watch?v=zZfhAXfBvVA&list=PLdpzxOOAlwvLUH6ww022l7OZGakJYP9WY&index=3
+
+once you folowed the github link and jenkins is installed copy the public IP from your Security group , Network ACL and rout table as attached in screen shot
+
+then run the github jenkins install commands then :
+
+ubuntu@ip-10-0-142-250:~$ ps -ef | grep jenkins
+jenkins     6541       1  0 12:26 ?        00:00:23 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080
+ubuntu      6821    3125  0 13:32 pts/1    00:00:00 grep --color=auto jenkins
+ubuntu@ip-10-0-142-250:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword ----> get the temp password for jenkins and do http://YOUR-PUBLIC-IP-EC2:8080 and enter the below password
+f6938bff5d064216aeb7915001d34f36
+ubuntu@ip-10-0-142-250:~$ 
+
+now install docker get commands from git  -->
+
+ubuntu@ip-10-0-142-250:~$ sudo su - 
+usermod -aG docker jenkins
+usermod -aG docker ubuntu
+systemctl restart docker
+root@ip-10-0-142-250:~# su - jenkins
+jenkins@ip-10-0-142-250:~$ docker run hello-world
+docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+jenkins@ip-10-0-142-250:~$ 
+jenkins@ip-10-0-142-250:~$ logout
+root@ip-10-0-142-250:~# usermod -aG docker jenkins
+root@ip-10-0-142-250:~# su - jenkins
+jenkins@ip-10-0-142-250:~$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+c1ec31eb5944: Pull complete 
+Digest: sha256:266b191e926f65542fa8daaec01a192c4d292bff79426f47300a046e1bc576fd
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+
+-------now hello world run now restart the jenkins http://YOUR-PUBLIC-IP-EC2:8080/restart
+
+
+---------------
+1. Mow you logged into Jenkins use new project --> pipeline --> (advantage of using this is it can write declarative pipeline)
+2. Using declartive pipeline is you can write pipeline as a code and share it across the team.

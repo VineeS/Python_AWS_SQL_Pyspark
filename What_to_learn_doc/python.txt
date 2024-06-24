@@ -1,0 +1,38 @@
+1. Boto3 --> https://www.youtube.com/watch?v=Ld1_vb1fH6c&list=PLjl2dJMjkDjlcI3SQErSq4UMX3okzafvO&ab_channel=AMonkinCloud%E2%98%81%EF%B8%8F
+2. decorators
+3. Python mutliprocessing https://www.youtube.com/watch?v=fKl2JW_qrso&ab_channel=CoreySchafer
+4. Pyspark with databricks whole video list
+5. Classes
+6. web scraping - https://www.youtube.com/watch?v=ng2o98k983k&ab_channel=CoreySchafer 
+(beautifulSoup, Requests)
+7. python APIs
+8. Python ingest, analyze, validate, normalize, and clean data
+9. Python datetime
+10. Pytest, Unitest
+11. frameworks such as FastAPI
+12. Automation Testing: Pytest, Unitest, Monkey patch, pytest-mockito etc
+13. RESTful APIs and microservices architecture : Experience with RESTful APIs and microservices architecture, and an understanding of how to design and implement them effectively
+14. REST API -> https://www.youtube.com/watch?v=qbLc5a9jdXo
+15. get the database handler as an input pull data from database : 
+2 mocking inputs one is the databse handler when you are writing test case you wont be directly connecting to the database but mocking this scenario
+and 2nd one is the response from the databse also needs to mocked . How will you use the mocking libraries (look for some use case and understand the scenario)
+
+Pytest/REST API
+1. Pytest -> https://www.youtube.com/watch?v=VKY-0LEmrwk&list=PLS1QulWo1RIaNFUz4zrztWlCJgkpXht-H&index=2
+2. Mock Test -> https://www.youtube.com/watch?v=xT4SV7AH3G8&ab_channel=RedEyedCoderClub
+3. Lambda layers use cases (3rd party API return JSON)
+4. Test cases approach for microservices deployment (docker , troubleshoot)
+5. ECS & Fargate
+6. git commands
+7. Cherry picking github  (learn basic git command)
+8. What where the issue while creating and triggering lambda (explained what issues like IAM role not given to S3 or lambda, code issues )
+9. How will you test the API (listen to the recording)
+10. CFT 
+11. If you have permission denied on CFT what will you check lambda or S3
+12. What will be your testing approach for testing JSON file 
+13 parametrize how can you use it 
+14. Important libraries while creating REST API and writing testing code 
+15. Step functions use cases 
+16. REST API 
+17. REST API sateless/stateful --> https://www.youtube.com/watch?v=P8D6P-6KVNM&ab_channel=CloudAdvocate
+18. Monkey Patching --> https://www.youtube.com/watch?v=GQGw3nEmv0E&ab_channel=CodingWithRoy

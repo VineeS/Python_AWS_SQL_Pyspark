@@ -1,0 +1,3 @@
+#!/bin/bash
+myName = "Vinee"
+echo "My name is : $myName"

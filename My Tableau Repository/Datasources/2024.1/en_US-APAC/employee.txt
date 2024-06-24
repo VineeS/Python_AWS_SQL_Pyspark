@@ -1,0 +1,7 @@
+Ename,sal
+Harry, 20000
+Tom, 50000
+Mike, 90000
+Lina, 10000
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY '1234';

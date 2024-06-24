@@ -1,0 +1,107 @@
+# CREATING EC2 USING AWS CLI
+1. https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html
+2. Command to create EC2 instance using CLI :
+ aws ec2 run-instances \
+> --image-id ami-003d3d03cfe1b0468 \
+> --instance-type t2.micro \
+> --key-name aws_login \
+> --subnet-id subnet-06b2b3c4fee137575 \
+> --security-group-ids sg-06d36c3f34119638a \
+> --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=CLIMyNewInstanceDemo}]'
+
+OUTPUT -----> 
+{
+    "Groups": [],
+    "Instances": [
+        {
+            "AmiLaunchIndex": 0,
+            "ImageId": "ami-003d3d03cfe1b0468",
+            "InstanceId": "i-0cffd6507f48733ed",
+            "InstanceType": "t2.micro",
+            "KeyName": "aws_login",
+            "LaunchTime": "2024-06-07T22:15:41+00:00",
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "Placement": {
+                "AvailabilityZone": "us-east-1a",
+                "GroupName": "",
+                "Tenancy": "default"
+            },
+            "PrivateDnsName": "ip-10-0-142-50.ec2.internal",
+            "PrivateIpAddress": "10.0.142.50",
+            "ProductCodes": [],
+            "PublicDnsName": "",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "StateTransitionReason": "",
+            "SubnetId": "subnet-06b2b3c4fee137575",
+            "VpcId": "vpc-011a8e3d7f0e94ce2",
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "3f7aad7f-82c6-476d-ae11-e94d4e307fc4",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2024-06-07T22:15:41+00:00",
+                        "AttachmentId": "eni-attach-0a9f8a96b2d80542e",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching",
+                        "NetworkCardIndex": 0
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupName": "default",
+                            "GroupId": "sg-06d36c3f34119638a"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "0e:08:19:27:fa:9b",
+                    "NetworkInterfaceId": "eni-0376554f2218ad7d9",
+                    "OwnerId": "743292407330",
+                    "PrivateDnsName": "ip-10-0-142-50.ec2.internal",
+                    "PrivateIpAddress": "10.0.142.50",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateDnsName": "ip-10-0-142-50.ec2.internal",
+:
+
+
+
+Before creating an EC2 instance, there are several prerequisites and considerations to ensure a smooth deployment:
+
+1. **AWS Account**: You need an AWS account to create and manage EC2 instances. If you don't have one, you'll need to sign up for an AWS account.
+
+2. **IAM Role**: While not strictly required, it's a best practice to create an IAM (Identity and Access Management) 
+role with the necessary permissions for your EC2 instance. This role can grant access to other AWS services or resources, such as S3 buckets or DynamoDB tables. 
+
+3. **VPC (Virtual Private Cloud)**: EC2 instances must be launched within a VPC. A VPC provides an isolated network environment 
+in the AWS cloud. If you don't have a VPC already, you'll need to create one.
+
+4. **Subnet**: EC2 instances must be launched into a subnet within your VPC. A subnet is a range of IP addresses in your VPC. 
+Each subnet must be associated with a route table that directs traffic to the subnet's associated gateway.
+
+5. **Security Group**: Security groups act as virtual firewalls for your EC2 instances, controlling inbound and outbound traffic. 
+you need to specify one or more security groups when creating an EC2 instance.
+
+6. **Key Pair**: If you plan to access your EC2 instance using SSH (Linux) or RDP (Windows), you'll need a key pair to securely connect to the instance.
+ If you don't have a key pair, you'll need to create one.
+
+7. **AMI (Amazon Machine Image)**: An AMI provides the information required to launch an instance. You can choose from a wide variety of AMIs provided by AWS, 
+the community, or create your own custom AMI.
+
+8. **Instance Type**: Choose an instance type based on your application's requirements, such as compute, memory, or storage optimized instances.
+
+9. **Storage**: Determine the storage requirements for your EC2 instance. You can attach additional EBS volumes if needed.
+
+10. **Tags (Optional)**: Tags are key-value pairs that you can assign to your EC2 instances to categorize and manage them easily.
+
+By ensuring you have these prerequisites in place, you'll be well-prepared to create and deploy your EC2 instance efficiently.

@@ -1,0 +1,89 @@
+Job1 :
+
+Develop and maintain data platforms using Python, Spark, and PySpark.
+Handle migration to PySpark on AWS.
+Design and implement data pipelines.
+Work with AWS and Big Data.
+Produce unit tests for Spark transformations and helper methods.
+Create Scala/Spark jobs for data transformation and aggregation.
+Write Scaladoc-style documentation for code.
+Optimize Spark queries for performance.
+Integrate with SQL databases (e.g., Microsoft, Oracle, Postgres, MySQL).
+Understand distributed systems concepts (CAP theorem, partitioning, replication, consistency, and consensus).
+
+Skills:
+Proficiency in Python, Scala (with a focus on functional programming), and Spark.
+Familiarity with Spark APIs, including RDD, DataFrame, MLlib, GraphX, and Streaming.
+Experience working with HDFS, S3, Cassandra, and/or DynamoDB.
+Deep understanding of distributed systems.
+Experience with building or maintaining cloud-native applications.
+Familiarity with serverless approaches using AWS Lambda is a plus
+
+Job2 requirement :
+1. Python
+2. Aws
+3. Lamba
+4. Step functions
+
+
+
+Premkrishna B --> Monday interview  congnizant --> Capital One (itechstack)
+1.Python : Senior Python Developers who are comfortable in writing production software in Python. 
+Superficial scripting knowledge is not sufficient.
+2.AWS : Proficiency in AWS is a must. AWS knowledge of Lambdas & Step functions is a huge plus.
+3. RESTful APIs and microservices architecture : Experience with RESTful APIs and microservices architecture, 
+and an understanding of how to design and implement them effectively
+
+Required skills:
+• Python, Pytest, Unitest are all mandatory
+• Strong Proficiency in Python programming language, including experience with frameworks such as FastAPI
+• AWS Lambdas & AWS Stepfunctions is a huge plus.
+• 4+ years of experience in Python & AWS.
+
+Role/Responsibilities:
+• The position is focused on python development of components for a software application platform
+• The candidate will develop and support the middle layer of the application to build, test, 
+and deploy RESTful micro services, create shared services components
+• Engineer capable of designing solutions, writing code, testing code, automating test and deployment
+• Automation Testing: Pytest, Unitest, Monkey patch, pytest-mockito etc
+
+
+Vedansh --> Mphasis --> JP morgan (itechstack) --> (Thursday)
+Develop and maintain data platforms using Python, Spark, and PySpark.
+Handle migration to PySpark on AWS.
+Design and implement data pipelines.
+Work with AWS and Big Data.
+Produce unit tests for Spark transformations and helper methods.
+Create Scala/Spark jobs for data transformation and aggregation.
+Write Scala doc-style documentation for code.
+Optimize Spark queries for performance.
+Integrate with SQL databases (e.g., Microsoft, Oracle, Postgres, MySQL).
+Understand distributed systems concepts (CAP theorem, partitioning, replication, consistency, and consensus).
+
+
+Role: Python Developer Must PySpark, AWS, Lambda
+
+Job Description...
+
+Strong Python development experience with Python, Pandas , NumPy, Pyspark 
+- Strong knowledge on AWS services such as (S3, RDS, EC2, Lambda, SQS, SNS, Redshift)
+- Having prior working experience in Fannie Mae will be added advantage
+- Good Knowledge on Java and Database (Oracle  Postgres)
+- API 
+- Lambda
+
+Support the standardization, customization, and ad-hoc data analysis, and will develop the mechanisms to ingest, analyze, validate, normalize, and clean data. Develop and maintain data engineering best practices and contribute to Insights on data analytics and visualization concepts, methods, and techniques.
+Design and develop data applications using selected tools and frameworks as required and requested.
+Collaborate with Engineers and Business to build intuitive products that address the needs of our customers.
+Read, extract, transform, stage and load data to selected tools and frameworks as required and requested.
+Gather and process raw data at scale.
+Perform tasks such as writing scripts, web scraping, calling-writing APIs, write SQL queries, etc.
+Work closely with the engineering team to integrate your work into our production systems.
+Process unstructured data into a form suitable for analysis. Analyze processed data.
+Participate in design and code reviews to ensure the quality of the products we deliver.
+Establish a good working rapport with Development group, System Engineers, Quality Assurance/Testers, and Business users.
+Develop scripts or workflows to facilitate complex ingress processes
+• The candidate will develop and support the middle layer of the application to build, test, and deploy RESTful micro services, create shared services components
+
+
+

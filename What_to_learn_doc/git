@@ -1,0 +1,200 @@
+vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git clone https://github.com/VineeS/Python-AWS-FastAPI-microservicces.git
+Cloning into 'Python-AWS-FastAPI-microservicces'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git status
+fatal: not a git repository (or any of the parent directories): .git
+vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % cd Python-AWS-FastAPI-microservicces
+
+vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % ls -la
+
+total 8
+drwxr-xr-x 4 vinee staff 128 Jun 22 07:59 .
+drwxr-xr-x 3 vinee staff 96 Jun 22 07:59 ..
+drwxr-xr-x 13 vinee staff 416 Jun 22 07:59 .git
+-rw-r--r-- 1 vinee staff 69 Jun 22 07:59 README.md
+vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git init
+
+Reinitialized existing Git repository in /Users/vinee/Desktop/PythonInterview/Python-interview-2024/Python-AWS-FastAPI-microservicces/Python-AWS-FastAPI-microservicces/.git/
+vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+vinee@Vinees-MBP Python-AWS-FastAPI-microservicces %
+
+### set the virtual enviornemnt
+
+vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % python3 --version
+
+Python 3.12.3
+vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % python3 -m venv ~/.venv
+source ~/.venv/bin/activate
+
+### Makefile
+
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces %
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % make install
+#install commands
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % make format
+#format test
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % make all
+#install commands
+#check syntax # flake8 and pylint
+#test
+#deploy
+
+### git commands
+
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: git branch -m <name>
+Initialized empty Git repository in /Users/vinee/Desktop/PythonInterview/Python-interview-2024/Python-AWS-FastAPI-microservicces/.git/
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+(use "git add <file>..." to include in what will be committed)
+Dockerfile
+Makefile
+Python-AWS-FastAPI-microservicces/
+main.py
+myLib/
+requirements.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git add \*
+warning: adding embedded git repository: Python-AWS-FastAPI-microservicces
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint: git submodule add <url> Python-AWS-FastAPI-microservicces
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint: git rm --cached Python-AWS-FastAPI-microservicces
+hint:
+hint: See "git help submodule" for more information.
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+(use "git rm --cached <file>..." to unstage)
+new file: Dockerfile
+new file: Makefile
+new file: Python-AWS-FastAPI-microservicces
+new file: main.py
+new file: myLib/**init**.py
+new file: myLib/logic.py
+new file: requirements.txt
+
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git ccommit -m "adding inital devops structure"
+git: 'ccommit' is not a git command. See 'git --help'.
+
+The most similar command is
+commit
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git commit -m "adding inital devops structure"
+[master (root-commit) e762555] adding inital devops structure
+7 files changed, 12 insertions(+)
+create mode 100644 Dockerfile
+create mode 100644 Makefile
+create mode 160000 Python-AWS-FastAPI-microservicces
+create mode 100644 main.py
+create mode 100644 myLib/**init**.py
+create mode 100644 myLib/logic.py
+create mode 100644 requirements.txt
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git remote -v
+
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git remote add origin https://github.com/VineeS/Python-AWS-FastAPI-microservicces.git
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git remote -v
+
+origin https://github.com/VineeS/Python-AWS-FastAPI-microservicces.git (fetch)
+origin https://github.com/VineeS/Python-AWS-FastAPI-microservicces.git (push)
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git push  
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git fetch  
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git status
+On branch master
+nothing to commit, working tree clean
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git add \*  
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git status
+On branch master
+nothing to commit, working tree clean
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git push  
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git push --set-upstream origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 545 bytes | 545.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote: https://github.com/VineeS/Python-AWS-FastAPI-microservicces/pull/new/master
+remote:
+To https://github.com/VineeS/Python-AWS-FastAPI-microservicces.git
+
+- [new branch] master -> master
+  branch 'master' set up to track 'origin/master'.
+  (.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git push  
+  Everything up-to-date
+  (.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git statis
+  git: 'statis' is not a git command. See 'git --help'.
+
+The most similar command is
+status
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git add .
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+(.venv) vinee@Vinees-MBP Python-AWS-FastAPI-microservicces %

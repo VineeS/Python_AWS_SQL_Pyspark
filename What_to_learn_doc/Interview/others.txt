@@ -1,0 +1,192 @@
+* Must Have Strong hands-on working experience in 
+    * Python, PySpark
+    * AWS native services 
+    * Databases (PostgreSQL, Aurora) 
+    * Data engineering (EMR, Redshift, Glue)
+    * Serverless experience (Lambda, step functions)
+    * Strong SQL, PL/SQL
+* Star/Snowflake Schema Design 
+* Datamart / Data Warehousing
+* Multi-Dimensional OLAP
+
+
+Interview question 
+How is memory handles in Python
+Remove space in spark
+How to copy a variable in python 
+Python library Pandas , Numpy
+
+AWS
+Glue 
+RDS
+Lambda creation 
+Step function -> example
+
+Spark
+
+How do you handle skew data 
+Spark jobs how to do you optimise 
+
+
+Answer : 
+Optimizing Spark jobs is crucial for improving performance and reducing execution time and resource usage. Here are some key strategies and techniques to optimize Spark jobs:
+
+1. **Data Serialization:**
+   - Use the more efficient serialization formats like Kryo instead of the default Java serialization.
+   ```python
+   conf = SparkConf().set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+   sc = SparkContext(conf=conf)
+   ```
+
+2. **Memory Management:**
+   - Properly configure the memory settings (`spark.executor.memory`, `spark.driver.memory`).
+   - Set the appropriate value for `spark.memory.fraction` and `spark.memory.storageFraction`.
+
+3. **Data Partitioning:**
+   - Repartition or coalesce your data to optimize the number of partitions.
+   - Avoid small or too many partitions. Ideally, you should have a partition size of around 128 MB.
+   ```python
+   df.repartition(num_partitions)
+   df.coalesce(num_partitions)
+   ```
+
+4. **Broadcast Variables:**
+   - Use broadcast variables to cache a small lookup table efficiently across all nodes.
+   ```python
+   broadcastVar = sc.broadcast(lookup_table)
+   ```
+
+5. **Caching and Persistence:**
+   - Cache intermediate RDDs or DataFrames when they are reused multiple times in your job.
+   ```python
+   df.cache()
+   ```
+
+6. **Data Locality:**
+   - Ensure data locality by co-locating data with the computation. Prefer HDFS or a distributed file system that supports locality.
+
+7. **Avoid Shuffling:**
+   - Reduce the number of shuffles by minimizing the use of operations that cause shuffles, such as `groupByKey()`, `reduceByKey()`, and `join()`.
+   - Use operations like `mapPartitions()`, `combineByKey()`, and `aggregateByKey()` instead.
+
+8. **Efficient Joins:**
+   - Use broadcast joins for small tables to avoid shuffle operations.
+   ```python
+   from pyspark.sql.functions import broadcast
+   df_large.join(broadcast(df_small), "key")
+   ```
+
+9. **Predicate Pushdown:**
+   - Push down filters as close to the data source as possible to reduce the amount of data read.
+   ```python
+   df.filter(df["column"] > value)
+   ```
+
+10. **Columnar Storage Format:**
+    - Use columnar storage formats like Parquet or ORC, which are more efficient for read-heavy operations.
+    ```python
+    df.write.parquet("path/to/parquet")
+    df.write.orc("path/to/orc")
+    ```
+
+11. **Avoid UDFs:**
+    - Avoid using User Defined Functions (UDFs) as they can be less efficient. Use Spark SQL functions whenever possible.
+    ```python
+    from pyspark.sql.functions import col, upper
+
+    df.select(upper(col("column_name")))
+    ```
+
+12. **Resource Allocation:**
+    - Appropriately allocate resources (executors, cores, memory) based on your cluster and job requirements.
+    - Tune `spark.executor.instances`, `spark.executor.cores`, `spark.executor.memory`, and `spark.driver.memory`.
+
+13. **Monitoring and Tuning:**
+    - Use the Spark UI to monitor job execution and identify bottlenecks.
+    - Profile and debug using the `spark.eventLog.enabled` and `spark.history.fs.logDirectory` configurations.
+
+14. **Speculative Execution:**
+    - Enable speculative execution to handle straggling tasks.
+    ```python
+    conf = SparkConf().set("spark.speculation", "true")
+    sc = SparkContext(conf=conf)
+    ```
+
+15. **Optimizing SQL Queries:**
+    - Use Spark SQL's built-in optimizations, such as Catalyst Optimizer and Tungsten execution engine, by writing efficient SQL queries.
+    - Enable Adaptive Query Execution (AQE) for dynamic optimizations.
+    ```python
+    spark.conf.set("spark.sql.adaptive.enabled", "true")
+    ```
+
+By implementing these strategies, you can significantly improve the performance and efficiency of your Spark jobs.
+
+
+Interview —> 
+
+Mphasis 
+1. Python 
+    1. deep copy shallow copy
+    2. Python libraries  - pandas , pyspark 
+    3. Python packing and unppacking
+    4. Decorator 
+    5. How do you handle error in Python 
+2. Spark
+    1. What are the challenges faced in running Spark job.
+    2. How to optimise spark 
+    3. How to improve performance in spark
+    4. How to handle Skew data 
+    5. Did you create any job scheduling (I stated I used data bricks , but you can use Airflow , Cron jobs, Jenkins to do CI/CD)
+    6. Bucketing in Spark
+3. AWS
+    1. SNS vs SQS
+    2. CAM theorem 
+    3. When did you create a lambda function 
+    4. When to use lambda and when to use EC2
+    5. ECS vs EC2
+    6. RDS
+4. Others:
+    1. Different data transformations done at work
+    2. What is most challenging situation you got stuck on
+    3. Different data bases used Dynamo DB
+    4. What where your different data sources you used
+    5. Django API
+    6. External API
+    7. What did you learn from your mistake from you most challenging situations 
+
+Interview Brillio —
+
+1. How will you create duplicate value in Mango DB
+2. In multithreading what issues can come up when you connected with database 
+3. SQL has a primary key and secondary key what are secondary  key 
+4. In what scenario will you use primary and in what scenario will you use primary key 
+5. If say two process are running at the same time how can you manage those process like DB connection and extraction of data 
+6. Mango DB how does it looks like 
+7. What If you have two tables and do not want the un -comman records which join will you use 
+8. Different joins in MySQL
+9. Have you used Airflow 
+
+
+Cognozant Interview - for Capital One 
+
+1. Pytest -> https://www.youtube.com/watch?v=VKY-0LEmrwk&list=PLS1QulWo1RIaNFUz4zrztWlCJgkpXht-H&index=2
+2. Mock Test
+3. Lambda layers use cases (3rd party API return JSON)
+4. Test cases approach for microservices deployment (docker , troubleshoot)
+5. ECS & Fargate
+6. git commands
+7. Cherry picking github  (learn basic git command)
+8. What where the issue while creating and triggering lambda (explained what issues like IAM role not given to S3 or lambda, code issues )
+9. How will you test the API (listen to the recording)
+10. CFT 
+11. If you have permission denied on CFT what will you check lambda or S3
+12. What will be your testing approach for testing JSON file 
+13 parametrize how can you use it 
+14. Important libraries while creating REST API and writing testing code 
+15. Step functions use cases 
+16. REST API 
+17. ECS vs EC2
+https://www.youtube.com/watch?v=SqFFCTNyi88&ab_channel=PragmaticAILabs - done
+https://www.youtube.com/watch?v=sDxsTPbUiik&ab_channel=LearnCantrill
+https://www.youtube.com/watch?v=P8D6P-6KVNM&ab_channel=CloudAdvocate
+https://www.youtube.com/watch?v=lss7T0R019M&ab_channel=VincentStevenson

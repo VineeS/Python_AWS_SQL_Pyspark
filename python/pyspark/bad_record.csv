@@ -1,0 +1,8 @@
+id,name,department,salary
+101,John Doe,Engineering,90000
+102,Alice Johnson,Engineering,60000
+103,Bob Williams,Engineering,110000
+104,Eva Brown,20,100000,09
+105,Charlie Davis,Marketing,80000
+106,Diana Wilson,Marketing,Seven Thousand
+107,Invalid,Invalid,Invalid
